@@ -1,6 +1,5 @@
 package prolog.terms;
 
-import java.util.Stack;
 
 /**
    Implements a stack of undo actions
@@ -11,7 +10,7 @@ import java.util.Stack;
    @see Term
    @see Var
 */
-public class Trail extends Stack {
+public class Trail extends ObjectStack {
   
   public Trail(){
     super();
