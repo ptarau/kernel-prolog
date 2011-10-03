@@ -1,0 +1,3 @@
+run "['src/tests/nrev']" mid halt
+run "['src/tests/allperms']" go go1 go2 halt
+run "['src/tests/q8']" go bm halt 
