@@ -5,7 +5,6 @@ import java.util.Iterator;
 import prolog.Init;
 import prolog.io.IO;
 
-
 //!depends
 
 /**
@@ -29,7 +28,8 @@ public class Unfolder extends Source {
   
   /**
    * Creates an Unfolder based on goal clause g for resolution
-   * step in program p
+   * step in program p. Iterator e is set to range over matching
+   * clauses in the database of program p.
    */
   public Unfolder(Clause g,Prog p){
     super(p);

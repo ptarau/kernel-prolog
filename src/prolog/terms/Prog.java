@@ -45,6 +45,11 @@ public class Prog extends Source implements Runnable {
   
   // INSTANCE METHODS
   
+  /**
+   * Here is where actual LD-resolution computation happens.
+   * It consists of a chain of "unfolding" steps, possibly
+   * involving backtracking, which is managed by the OrStack.
+   */
   public Term getElement() {
     if(null==orStack)
       return null;
