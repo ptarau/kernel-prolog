@@ -1,0 +1,3 @@
+rm -r -f jdoc 
+javadoc -d jdoc -keywords -sourcepath src -private -use -windowtitle "Kernel Prolog" prolog prolog.terms prolog.io prolog.fluents prolog.builtins
+

@@ -29,3 +29,4 @@ design it has features going far beyond ISO Prolog.
 Enjoy,
 
 Paul Tarau
+

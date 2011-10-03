@@ -85,17 +85,17 @@ ints(From,To,Ns):-
 
 ints(Max,Ns):-ints(1,Max,Ns).
 
-compose_sources(First,Second,Prod):-  source_lazy_list(First,LL1),  source_lazy_list(Second,LL2),
+compose_sources(First,Second,Prod):-  source_list(First,LL1),  source_list(Second,LL2),
   answer_source(pair(X,Y),     and(
-       lazy_element_of(LL1,X),       lazy_element_of(LL2,Y)
+       element_of(LL1,X),       element_of(LL2,Y)
      ),  Prod).
 
 append_sources(S1,S2,R):-append_sources([S1,S2],R).
 append_sources(Ss,R):-
    answer_source(X,
      and(
-        member(S,Ss),        source_lazy_list(S,LL),
-        lazy_element_of(LL,X)     ),
+        member(S,Ss),        source_list(S,LL),
+        element_of(LL,X)     ),
    R).
 
 % see also merge_sources/2, a builtin
