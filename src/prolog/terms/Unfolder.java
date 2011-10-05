@@ -128,6 +128,7 @@ public class Unfolder extends Source {
       // resolution step, over goal/resolvent of the form:
       // Answer:-G1,G2,...,Gn.
       prog.getTrail().unwind(oldtop);
+      // unify() happens here !!!
       unfolded_goal=T.toClause().unfold_with_goal(goal,prog.getTrail());
       if(null!=unfolded_goal)
         break;

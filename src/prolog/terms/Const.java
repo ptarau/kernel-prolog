@@ -50,10 +50,6 @@ public class Const extends Nonvar {
     return super.bind_to(that,trail)&&((Const)that).sym==sym;
   }
   
-  public boolean eq(Term that) {
-    return (that instanceof Const)&&((Const)that).sym==sym;
-  }
-  
   public String getKey() {
     return sym;
   }

@@ -1,3 +1,3 @@
-run "['src/tests/nrev']" mid halt
-run "['src/tests/allperms']" go go1 go2 halt
-run "['src/tests/q8']" go bm halt 
+run "['src/tests/nrev']" "time(mid)" halt
+run "['src/tests/allperms']" "time(go)" "time(go1)" "time(go2)" halt
+run "['src/tests/q8']" "time(go)" "time(bm)" halt

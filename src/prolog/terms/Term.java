@@ -45,7 +45,7 @@ public abstract class Term extends Object implements Cloneable {
   protected void undo() { // does nothing
   }
   
-  public abstract boolean eq(Term that);
+  // public abstract boolean eq(Term that);
   
   public Term token() {
     return this;

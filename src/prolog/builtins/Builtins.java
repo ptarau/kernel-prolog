@@ -1117,7 +1117,7 @@ class set_persistent extends FunBuiltin {
   public int exec(Prog p) {
     Fluent F=(Fluent)getArg(0);
     Const R=(Const)getArg(1);
-    boolean yesno=!R.eq(Const.aNo);
+    boolean yesno=!R.equals(Const.aNo);
     F.setPersistent(yesno);
     return 1;
   }

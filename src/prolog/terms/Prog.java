@@ -27,6 +27,9 @@ public class Prog extends Source implements Runnable {
   
   private Trail trail;
   
+  /**
+   * Contains Unfolders that may produce answers.
+   */
   private ObjectStack orStack;
   
   private Prog parent;

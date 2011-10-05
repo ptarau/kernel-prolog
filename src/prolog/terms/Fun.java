@@ -53,7 +53,8 @@ public class Fun extends Const {
   }
   
   public final int putArg(int i,Term T,Prog p) {
-    return getArg(i).unify(T,p.getTrail())?1:0;
+    // return getArg(i).unify(T,p.getTrail())?1:0;
+    return args[i].unify(T,p.getTrail())?1:0;
   }
   
   public Fun(String s,Term x0){
@@ -111,8 +112,9 @@ public class Fun extends Const {
   
   boolean unify_to(Term that,Trail trail) {
     if(bind_to(that,trail)) {
+      Fun other=(Fun)that;
       for(int i=0;i<args.length;i++) {
-        if(!args[i].unify(((Fun)that).args[i],trail))
+        if(!args[i].unify(other.args[i],trail))
           return false;
       }
       return true;

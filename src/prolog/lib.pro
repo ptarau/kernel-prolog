@@ -578,4 +578,17 @@ number_codes(N,Cs):-if(nonvar(N),name_to_chars(N,Cs),chars_to_name(1,Cs,N)).
 atom_codes(N,Cs):-if(nonvar(N),name_to_chars(N,Cs),chars_to_name(0,Cs,N)).
 numbervars(T):-numbervars(T,T).variant_of(A,B):-numbervars(A,X),numbervars(B,Y),eq(X,Y).
 
-
+time(G,T):-
+  ctime(T1),
+  if(G,true,true), 
+  ctime(T2),
+  compute('-',T2,T1,T).
+  
+time(G):-
+  time(G,T),
+  println(goal(G)),
+  println(time(T)),
+  nl. 
+  
+  
+  

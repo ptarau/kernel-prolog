@@ -65,7 +65,7 @@ public class ClauseReader extends CharReader {
         stop();
       } else
         C=parser.readClause();
-      if(C!=null&&C.getHead().eq(Const.anEof)) {
+      if(C!=null&&C.getHead().equals(Const.anEof)) {
         C=null;
         stop();
       }

@@ -19,10 +19,6 @@ public abstract class Nonvar extends Term {
       return that.bind_to(this,trail);
   }
   
-  public boolean eq(Term that) {
-    return (that instanceof Nonvar)&&bind_to(that,null);
-  }
-  
   /**
     returns a list representation of the object
   */

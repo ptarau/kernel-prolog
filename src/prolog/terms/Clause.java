@@ -184,7 +184,7 @@ public class Clause extends Fun {
     Converts a clause to a term.
     Note that Head:-true will convert to the term Head.
   */
-  public Term toTerm() {
+  public final Term toTerm() {
     if(getBody() instanceof true_)
       return getHead();
     return this;
@@ -277,7 +277,7 @@ public class Clause extends Fun {
     @see Term#unify()
 
   */
-  Clause unfold(Clause that,Trail trail) {
+  private final Clause unfold(Clause that,Trail trail) {
     Clause result=null;
     Term first=getFirst();
     
@@ -306,7 +306,7 @@ public class Clause extends Fun {
   }
   
   // synchronized
-  Clause unfoldedCopy(Clause that,Trail trail) {
+  final Clause unfoldedCopy(Clause that,Trail trail) {
     int oldtop=trail.size();
     Clause result=unfold(that,trail);
     if(result==null)
@@ -320,7 +320,7 @@ public class Clause extends Fun {
     Returns a key based on the principal functor of the
     head of the clause and its arity.
   */
-  public String getKey() {
+  final public String getKey() {
     return getHead().getKey();
   }
   
