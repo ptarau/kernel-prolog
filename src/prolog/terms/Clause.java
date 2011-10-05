@@ -42,7 +42,7 @@ public class Clause extends Fun {
   
   /**
     Reads a goal as a clause containing a dummy header with
-    all veriables in it
+    all variables in it
   */
   
   public Clause toGoal() {
