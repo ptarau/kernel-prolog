@@ -117,7 +117,7 @@ public class Unfolder extends Source {
    * Returns a new clause by unfolding the goal with a matching
    * clause in the database, or null if no such clause exists.
    */
-  public Term getElement() {
+  public Clause getElement() {
     if(null==e)
       return null;
     Clause unfolded_goal=null;

@@ -62,14 +62,14 @@ public class Prog extends Source implements Runnable {
       answer=I.getAnswer();
       if(null!=answer)
         break;
-      Clause goal=(Clause)I.getElement();
-      if(null!=goal) {
+      Clause nextgoal=I.getElement();
+      if(null!=nextgoal) {
         if(I.notLastClause())
           orStack.push(I);
         else
           I.stop();
         if(null==answer)
-          orStack.push(new Unfolder(goal,this));
+          orStack.push(new Unfolder(nextgoal,this));
       }
     }
     Term head;

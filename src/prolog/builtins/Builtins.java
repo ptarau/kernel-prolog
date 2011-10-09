@@ -197,7 +197,7 @@ public class Builtins extends HashDict {
 /**
  * checks if something is a builtin
  */
-class is_builtin extends FunBuiltin {
+final class is_builtin extends FunBuiltin {
   is_builtin(){
     super("is_builtin",1);
   }
@@ -210,7 +210,7 @@ class is_builtin extends FunBuiltin {
 /**
   does its best to halt the program:-)
 */
-class halt extends ConstBuiltin {
+final class halt extends ConstBuiltin {
   halt(){
     super("halt");
   }
@@ -224,7 +224,7 @@ class halt extends ConstBuiltin {
 /**
  * Calls an external program
  */
-class system extends FunBuiltin {
+final class system extends FunBuiltin {
   system(){
     super("system",1);
   }
@@ -238,7 +238,7 @@ class system extends FunBuiltin {
 /**
   opens a reader returning the content of a file char by char
 */
-class file_char_reader extends FunBuiltin {
+final class file_char_reader extends FunBuiltin {
   file_char_reader(){
     super("file_char_reader",2);
   }
@@ -259,7 +259,7 @@ class file_char_reader extends FunBuiltin {
 /**
   opens a reader returning clauses from a file
 */
-class file_clause_reader extends FunBuiltin {
+final class file_clause_reader extends FunBuiltin {
   file_clause_reader(){
     super("file_clause_reader",2);
   }
@@ -280,7 +280,7 @@ class file_clause_reader extends FunBuiltin {
 /**
   opens a writer which puts characters to a file one by one
 */
-class char_file_writer extends FunBuiltin {
+final class char_file_writer extends FunBuiltin {
   char_file_writer(){
     super("char_file_writer",2);
   }
@@ -295,7 +295,7 @@ class char_file_writer extends FunBuiltin {
 /**
   opens a writer which puts characters to a file one by one
 */
-class clause_file_writer extends FunBuiltin {
+final class clause_file_writer extends FunBuiltin {
   clause_file_writer(){
     super("clause_file_writer",2);
   }
@@ -310,7 +310,7 @@ class clause_file_writer extends FunBuiltin {
 /**
   get the standard output (a reader)
 */
-class get_stdin extends FunBuiltin {
+final class get_stdin extends FunBuiltin {
   get_stdin(){
     super("get_stdin",1);
   }
@@ -323,7 +323,7 @@ class get_stdin extends FunBuiltin {
 /**
   get standard output (a writer)
 */
-class get_stdout extends FunBuiltin {
+final class get_stdout extends FunBuiltin {
   get_stdout(){
     super("get_stdout",1);
   }
@@ -343,7 +343,7 @@ class get_stdout extends FunBuiltin {
   -4 for a wrapped JavaObject;
   @see Term#getArity
 */
-class get_arity extends FunBuiltin {
+final class get_arity extends FunBuiltin {
   get_arity(){
     super("get_arity",2);
   }
@@ -357,7 +357,7 @@ class get_arity extends FunBuiltin {
 /**
  * Dumps the current Java Stack
  */
-class stack_dump extends FunBuiltin {
+final class stack_dump extends FunBuiltin {
   
   stack_dump(){
     super("stack_dump",1);
@@ -373,7 +373,7 @@ class stack_dump extends FunBuiltin {
 /**
   returns the real time spent up to now
 */
-class ctime extends FunBuiltin {
+final class ctime extends FunBuiltin {
   
   ctime(){
     super("ctime",1);
@@ -393,7 +393,7 @@ class ctime extends FunBuiltin {
   if > 0 it will not print more than IO.maxAnswers
   if < 0 it will print them out all
 */
-class set_max_answers extends FunBuiltin {
+final class set_max_answers extends FunBuiltin {
   set_max_answers(){
     super("set_max_answers",1);
   }
@@ -411,7 +411,7 @@ class set_max_answers extends FunBuiltin {
 
 */
 
-class reconsult extends FunBuiltin {
+final class reconsult extends FunBuiltin {
   reconsult(){
     super("reconsult",1);
   }
@@ -427,7 +427,7 @@ class reconsult extends FunBuiltin {
   existing predicate definitions
   @see reconsult
 */
-class consult extends FunBuiltin {
+final class consult extends FunBuiltin {
   consult(){
     super("consult",1);
   }
@@ -442,7 +442,7 @@ class consult extends FunBuiltin {
 /**
   shorthand for reconsulting the last file
 */
-class reconsult_again extends ConstBuiltin {
+final class reconsult_again extends ConstBuiltin {
   reconsult_again(){
     super("reconsult_again");
   }
@@ -455,7 +455,7 @@ class reconsult_again extends ConstBuiltin {
 /**
  * gets default database
  */
-class get_default_db extends FunBuiltin {
+final class get_default_db extends FunBuiltin {
   get_default_db(){
     super("get_default_db",1);
   }
@@ -470,7 +470,7 @@ class get_default_db extends FunBuiltin {
 /**
  * creates new database
  */
-class new_db extends FunBuiltin {
+final class new_db extends FunBuiltin {
   new_db(){
     super("new_db",1);
   }
@@ -483,7 +483,7 @@ class new_db extends FunBuiltin {
 /**
   Puts a term on the local blackboard
 */
-class db_add extends FunBuiltin {
+final class db_add extends FunBuiltin {
   
   db_add(){
     super("db_add",2);
@@ -506,7 +506,7 @@ class db_add extends FunBuiltin {
 /**
   removes a matching term if available, fails otherwise
 */
-class db_remove extends FunBuiltin {
+final class db_remove extends FunBuiltin {
   
   db_remove(){
     super("db_remove",3);
@@ -525,7 +525,7 @@ class db_remove extends FunBuiltin {
   @see out
   @see in
 */
-class db_collect extends FunBuiltin {
+final class db_collect extends FunBuiltin {
   
   db_collect(){
     super("db_collect",3);
@@ -542,7 +542,7 @@ class db_collect extends FunBuiltin {
 /**
  * Maps a DataBase to a Source enumerating its elements
  */
-class db_source extends FunBuiltin {
+final class db_source extends FunBuiltin {
   
   db_source(){
     super("db_source",2);
@@ -558,7 +558,7 @@ class db_source extends FunBuiltin {
 /**
   collects all matching terms in a (possibly empty) list
 */
-class at_key extends FunBuiltin {
+final class at_key extends FunBuiltin {
   
   at_key(){
     super("at_key",2);
@@ -573,7 +573,7 @@ class at_key extends FunBuiltin {
 /**
  * Returns a representation of predicate as a string constant
  */
-class pred_to_string extends FunBuiltin {
+final class pred_to_string extends FunBuiltin {
   
   pred_to_string(){
     super("pred_to_string",2);
@@ -592,7 +592,7 @@ class pred_to_string extends FunBuiltin {
 /**
   lists all the local blackboard to a string (Linda terms + clauses)
 */
-class db_to_string extends FunBuiltin {
+final class db_to_string extends FunBuiltin {
   db_to_string(){
     super("db_to_string",1);
   }
@@ -605,7 +605,7 @@ class db_to_string extends FunBuiltin {
 /**
   arg(I,Term,X) unifies X with the I-the argument of functor T
 */
-class arg extends FunBuiltin {
+final class arg extends FunBuiltin {
   arg(){
     super("arg",3);
   }
@@ -623,7 +623,7 @@ class arg extends FunBuiltin {
   new_fun(F,N,T) creates a term T based on functor F with arity
   N and new free varables as arguments
 */
-class new_fun extends FunBuiltin {
+final class new_fun extends FunBuiltin {
   new_fun(){
     super("new_fun",3);
   }
@@ -646,7 +646,7 @@ class new_fun extends FunBuiltin {
 /**
   converts a name to a list of chars
 */
-class name_to_chars extends FunBuiltin {
+final class name_to_chars extends FunBuiltin {
   name_to_chars(){
     super("name_to_chars",2);
   }
@@ -660,7 +660,7 @@ class name_to_chars extends FunBuiltin {
 /**
   converts a name to a list of chars
 */
-class chars_to_name extends FunBuiltin {
+final class chars_to_name extends FunBuiltin {
   chars_to_name(){
     super("chars_to_name",3);
   }
@@ -687,7 +687,7 @@ class chars_to_name extends FunBuiltin {
  * returns a copy of a Term with variables uniformly replaced with 
  * constants 
  */
-class numbervars extends FunBuiltin {
+final class numbervars extends FunBuiltin {
   numbervars(){
     super("numbervars",2);
   }
@@ -702,7 +702,7 @@ class numbervars extends FunBuiltin {
  * Performs simple arithmetic operations
  * like compute('+',1,2,Result)
  */
-class compute extends FunBuiltin {
+final class compute extends FunBuiltin {
   compute(){
     super("compute",4);
   }
@@ -770,7 +770,7 @@ class compute extends FunBuiltin {
 /**
  * controls trace levels for debugging
  */
-class set_trace extends FunBuiltin {
+final class set_trace extends FunBuiltin {
   set_trace(){
     super("set_trace",1);
   }
@@ -786,7 +786,7 @@ class set_trace extends FunBuiltin {
   successive values as a list.
 */
 
-class source_list extends FunBuiltin {
+final class source_list extends FunBuiltin {
   source_list(){
     super("source_list",2);
   }
@@ -801,7 +801,7 @@ class source_list extends FunBuiltin {
 /**
  * maps a List to a Source
  */
-class list_source extends FunBuiltin {
+final class list_source extends FunBuiltin {
   
   list_source(){
     super("list_source",2);
@@ -816,7 +816,7 @@ class list_source extends FunBuiltin {
 /**
  * maps a Term to a Source
  */
-class term_source extends FunBuiltin {
+final class term_source extends FunBuiltin {
   
   term_source(){
     super("term_source",2);
@@ -832,7 +832,7 @@ class term_source extends FunBuiltin {
  * Creates an Integer Source which advances at most Fuel (infinite if Fule==0) 
  * Steps computing each time x:= a*x+b. Called as: integer_source(Fuel,A,X,B,NewSource)
  */
-class integer_source extends FunBuiltin {
+final class integer_source extends FunBuiltin {
   
   integer_source(){
     super("integer_source",5);
@@ -849,7 +849,7 @@ class integer_source extends FunBuiltin {
 /**
   Builds a Looping Source from a Source.
 */
-class source_loop extends FunBuiltin {
+final class source_loop extends FunBuiltin {
   source_loop(){
     super("source_loop",2);
   }
@@ -863,7 +863,7 @@ class source_loop extends FunBuiltin {
 /**
  * Builds a Source from a Term
  */
-class source_term extends FunBuiltin {
+final class source_term extends FunBuiltin {
   
   source_term(){
     super("source_term",2);
@@ -885,7 +885,7 @@ class source_term extends FunBuiltin {
    at a time of the form "the(X)" using G as initial resolvent
    and "no" when no more answers are available.
 */
-class answer_source extends FunBuiltin {
+final class answer_source extends FunBuiltin {
   answer_source(){
     super("answer_source",3);
   }
@@ -900,7 +900,7 @@ class answer_source extends FunBuiltin {
 /**
   Builds a new clause H:-B and maps it to an iterator
 */
-class unfolder_source extends FunBuiltin {
+final class unfolder_source extends FunBuiltin {
   unfolder_source(){
     super("unfolder_source",2);
   }
@@ -919,7 +919,7 @@ class unfolder_source extends FunBuiltin {
  gets one element from the Source
 */
 
-class get extends FunBuiltin {
+final class get extends FunBuiltin {
   get(){
     super("get",2);
   }
@@ -940,7 +940,7 @@ class get extends FunBuiltin {
  sends one element to the Sink 
 */
 
-class put extends FunBuiltin {
+final class put extends FunBuiltin {
   put(){
     super("put",2);
   }
@@ -959,7 +959,7 @@ class put extends FunBuiltin {
   frees a Fluent's resources and ensures
   it cannot produce/consume any new values
 */
-class stop extends FunBuiltin {
+final class stop extends FunBuiltin {
   stop(){
     super("stop",1);
   }
@@ -975,7 +975,7 @@ class stop extends FunBuiltin {
   Splits a (finite) Source in two new ones
   which inherit the current state of the parent.
 */
-class split_source extends FunBuiltin {
+final class split_source extends FunBuiltin {
   split_source(){
     super("split_source",3);
   }
@@ -991,7 +991,7 @@ class split_source extends FunBuiltin {
 /**
   Merges all Sources contained in a List into one Source.
 */
-class merge_sources extends FunBuiltin {
+final class merge_sources extends FunBuiltin {
   merge_sources(){
     super("merge_sources",2);
   }
@@ -1005,7 +1005,7 @@ class merge_sources extends FunBuiltin {
 /**
   Flushes to a Sink the content of a Source Fluent
 */
-class discharge extends FunBuiltin {
+final class discharge extends FunBuiltin {
   discharge(){
     super("discharge",2);
   }
@@ -1029,7 +1029,7 @@ class discharge extends FunBuiltin {
   Collects a reference to or the content of a Sink
 */
 
-class collect extends FunBuiltin {
+final class collect extends FunBuiltin {
   collect(){
     super("collect",2);
   }
@@ -1049,7 +1049,7 @@ class collect extends FunBuiltin {
  * Builds a StringSink which concatenates String representations
  * of Terms with put/1 and the return their concatenation with collect/1
  */
-class term_string_collector extends FunBuiltin {
+final class term_string_collector extends FunBuiltin {
   term_string_collector(){
     super("term_string_collector",1);
   }
@@ -1063,7 +1063,7 @@ class term_string_collector extends FunBuiltin {
  * Builds a TermCollector Sink which accumulates
  * Terms with put/1 and the return them with collect/1
  */
-class term_collector extends FunBuiltin {
+final class term_collector extends FunBuiltin {
   term_collector(){
     super("term_collector",1);
   }
@@ -1076,7 +1076,7 @@ class term_collector extends FunBuiltin {
 /**
  * Creates a char reader from a String.
  */
-class string_char_reader extends FunBuiltin {
+final class string_char_reader extends FunBuiltin {
   string_char_reader(){
     super("string_char_reader",2);
   }
@@ -1089,7 +1089,7 @@ class string_char_reader extends FunBuiltin {
 /**
  *  Creates a clause reader from a String.
  */
-class string_clause_reader extends FunBuiltin {
+final class string_clause_reader extends FunBuiltin {
   string_clause_reader(){
     super("string_clause_reader",2);
   }
@@ -1109,7 +1109,7 @@ class string_clause_reader extends FunBuiltin {
  * set_persistent(Fluent,no) makes the Fluent perish
  * on backtracking (default behavior)
  */
-class set_persistent extends FunBuiltin {
+final class set_persistent extends FunBuiltin {
   set_persistent(){
     super("set_persistent",2);
   }
@@ -1126,7 +1126,7 @@ class set_persistent extends FunBuiltin {
 /**
  * Gets the yes/no persistentcy value of a Fluent.
  */
-class get_persistent extends FunBuiltin {
+final class get_persistent extends FunBuiltin {
   get_persistent(){
     super("get_persistent",2);
   }

@@ -281,18 +281,12 @@ public class Clause extends Fun {
     Clause result=null;
     Term first=getFirst();
     
-    // this is the resolvent, that is the SHARED clause
-    // threfore synchronization is over that, not this
     if(first!=null&&that.getHead().matches(first)) {
-      
-      // IO.mes("UNFOLD: THIS: >>>:"+trail.name()+" "+that);
       
       if(!that.provenGround())
         that=that.ccopy();
       
       that.getHead().unify(first,trail);
-      
-      // IO.mes("UNFOLD<<<:"+trail.name()+": "+that);
       
       Term cont=appendConj(that.getBody(),getRest());
       result=new Clause(getHead(),cont);
