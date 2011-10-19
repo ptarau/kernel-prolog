@@ -79,11 +79,13 @@ public abstract class Term extends Object implements Cloneable {
   */
   // synchronized
   public boolean matches(Term that) {
-    Trail trail=new Trail();
-    // IO.trace("Curr:>>"+trail.pprint());
+    return matches(that,new Trail());
+  }
+  
+  public boolean matches(Term that,Trail trail) {
+    int oldtop=trail.size();
     boolean ok=unify(that,trail);
-    trail.unwind(0);
-    // IO.trace("CurrT<<:"+trail.pprint());
+    trail.unwind(oldtop);
     return ok;
   }
   
@@ -95,6 +97,7 @@ public abstract class Term extends Object implements Cloneable {
     Make sure it is used as SHARED.matching_copy(NONSHARED,trail).
   */
   // synchronized
+  
   public Term matching_copy(Term that) {
     Trail trail=new Trail();
     boolean ok=unify(that,trail);

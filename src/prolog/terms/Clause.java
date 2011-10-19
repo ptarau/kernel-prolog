@@ -12,7 +12,7 @@ import prolog.io.Parser;
 */
 public class Clause extends Fun {
   /**
-   *  Builds a clause given ith head and its body
+   *  Builds a clause given its head and its body
    */
   public Clause(Term head,Term body){
     super(":-",head,body);
@@ -197,6 +197,8 @@ public class Clause extends Fun {
     the current resolvant.
   */
   final Clause ccopy() {
+    if(ground)
+      return this;
     Clause C=(Clause)copy();
     C.dict=null;
     C.ground=ground;
@@ -281,10 +283,9 @@ public class Clause extends Fun {
     Clause result=null;
     Term first=getFirst();
     
-    if(first!=null&&that.getHead().matches(first)) {
+    if(first!=null&&that.getHead().matches(first,trail)) {
       
-      if(!that.provenGround())
-        that=that.ccopy();
+      that=that.ccopy();
       
       that.getHead().unify(first,trail);
       
@@ -299,6 +300,7 @@ public class Clause extends Fun {
     return goal.unfold(this,trail);
   }
   
+  /*
   // synchronized
   final Clause unfoldedCopy(Clause that,Trail trail) {
     int oldtop=trail.size();
@@ -309,6 +311,7 @@ public class Clause extends Fun {
     trail.unwind(oldtop);
     return result;
   }
+  */
   
   /**
     Returns a key based on the principal functor of the

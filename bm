@@ -1,3 +1,1 @@
-run "['src/tests/nrev']" "time(mid)" halt
-run "['src/tests/allperms']" "time(go)" "time(go1)" "time(go2)" halt
-run "['src/tests/q8']" "time(go)" "time(bm)" halt
+run "[nrev]" go "[perms]" go go1 "[q8]" go "println(done)" halt

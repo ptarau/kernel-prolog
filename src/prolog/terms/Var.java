@@ -37,6 +37,7 @@ public class Var extends Term {
   
   boolean unify_to(Term that,Trail trail) {
     // expects: this, that are dereferenced
+    // return (this==that)?true:val.bind_to(that,trail);
     return val.bind_to(that,trail);
   }
   
